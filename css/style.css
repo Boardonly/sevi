@@ -132,7 +132,9 @@ textarea {
 @media screen and (min-width: 1200px) {
 	.ba-research {
 		background: url(../img/background_1.png) no-repeat top right,
-    url(../img/3rows_dotted.png) no-repeat left center;
+	 url(../img/3rows_dotted.png) no-repeat left center;
+	 background-size: auto;
+	 
 	}
 }
 .ba-header {
