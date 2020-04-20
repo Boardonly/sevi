@@ -314,8 +314,7 @@ textarea {
     margin-bottom: 140px;
   }
 }
-.ba-libraries__title > span,
-.ba-resources__title > span {
+.ba-title__color> span {
   color: #fdc800;
 }
 .ba-resources__inner {
