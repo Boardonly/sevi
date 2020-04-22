@@ -786,26 +786,88 @@ select {
 .ba-nav {
   display: none;
 }
-.ba-nav__items {
-  margin: 0;
-  align-items: center;
-}
-.ba-nav__items > :first-child {
-  font-weight: 700;
-}
-.ba-nav__items li {
-  display: inline-block;
-}
-.ba-nav__items li + li {
-  margin-left: 70px;
-}
-.ba-nav__items li:hover > a {
-  color: #44224b;
+@media screen and (min-width: 1024px) {
+  .ba-nav__items > li:last-child {
+    background: #723182;
+    padding: 5px 55px;
+    border: 1px solid #723182;
+    border-radius: 30px;
+  }
+  .ba-nav__items > li:last-child > a {
+    color: #f3edf4;
+  }
+  .ba-nav__items > li:last-child:hover {
+    background: transparent;
+  }
+  .ba-nav__items {
+    margin: 0;
+    align-items: center;
+  }
+  .ba-nav__items > :first-child {
+    font-weight: 700;
+  }
+  .ba-nav__items li {
+    display: inline-block;
+  }
+  .ba-nav__items li + li {
+    margin-left: 70px;
+  }
+  .ba-nav__items li:hover > a {
+    color: #44224b;
+  }
 }
 @media screen and (min-width: 1200px) {
   .ba-nav {
     display: flex;
   }
+}
+
+.ba-menu-toggle {
+  display: flex;
+  width: 40px;
+  height: 24px;
+  border: none;
+  background: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  outline: none;
+  padding: 0;
+}
+.ba-menu-toggle::before, .ba-menu-toggle::after {
+  content: "";
+}
+.ba-menu-toggle::before, .ba-menu-toggle::after, .ba-menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: #810909;
+  transition: transform 0.3s, opacity 0.3s;
+}
+@media screen and (min-width: 1024px) {
+  .ba-menu-toggle {
+    display: none;
+  }
+}
+
+.ba-nav.open {
+  /* display: block; */
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.ba-nav.open ~ .ba-menu-toggle::before {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.ba-nav.open ~ .ba-menu-toggle::after {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+.ba-nav.open ~ .ba-menu-toggle span {
+  opacity: 0;
 }
 
 .ba-items--button {
@@ -820,6 +882,10 @@ select {
   background: transparent;
 }
 
+.ba-title__color > span {
+  color: #fdc800;
+}
+
 .ba-resources {
   background: url(../img/3rows_dotted.png) no-repeat right center;
   text-align: center;
@@ -831,9 +897,6 @@ select {
   .ba-resources__title {
     margin-bottom: 140px;
   }
-}
-.ba-resources .ba-title__color > span {
-  color: #fdc800;
 }
 .ba-resources__inner {
   display: flex;
@@ -957,11 +1020,17 @@ select {
   text-align: left;
   padding-top: 50px;
 }
+.ba-mobile__main p {
+  margin-bottom: 60px;
+}
 .ba-mobile__title {
   margin-bottom: 50px;
 }
-.ba-mobile__main p {
-  margin-bottom: 60px;
+.ba-mobile__store {
+  padding-left: 10px;
+}
+.ba-mobile__link + .ba-mobile__link {
+  margin-left: 26px;
 }
 @media screen and (min-width: 640px) {
   .ba-mobile .ba-mobile__mainwrap {
@@ -978,16 +1047,18 @@ select {
     order: 0;
   }
   .ba-mobile .ba-mobile__title {
-    margin-bottom: 52px;
+    margin-bottom: 45px;
+    line-height: 1.5;
+    letter-spacing: 0.019em;
   }
   .ba-mobile .ba-mobile__main p {
-    margin-bottom: 90px;
+    margin-bottom: 88px;
   }
 }
 @media screen and (min-width: 1200px) {
   .ba-mobile .ba-mobile__main {
     max-width: 650px;
-    padding: 50px 50px 0 0;
+    padding: 50px 130px 0 0;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -998,21 +1069,22 @@ select {
 
 .ba-footer-row {
   display: flex;
-  justify-content: center;
-  margin-left: -40px;
+  margin: 0 auto;
+  padding: 50px 0px 0px;
   max-width: 1240px;
+}
+.ba-footer-row :first-child {
+  margin-top: 5px;
 }
 .ba-footer-col {
   width: 230px;
 }
-.ba-footer-col :first-child {
-  padding-top: 50px;
-}
 .ba-footer-col + .ba-footer-col {
-  margin-left: 45px;
+  margin-left: 35px;
 }
 .ba-footer-item {
   display: block;
+  margin: 0;
 }
 .ba-footer-item :first-child {
   font-weight: 700;
@@ -1026,7 +1098,6 @@ select {
 .ba-footer__bottom {
   display: flex;
   justify-content: center;
-  align-items: top;
   border-top: 2px solid #d9d9d9;
   padding-top: 42px;
 }
@@ -1036,5 +1107,6 @@ select {
 }
 .ba-footer__bottom p {
   line-height: 1;
+  font-size: 18px;
   margin-right: 40px;
 }

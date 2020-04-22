@@ -56,12 +56,15 @@
 								</a>
 							</li>
 							<li>
-								<a class="ba-items--button" href="#">
+								<a class="ba-items-button" href="#">
 									Login
 								</a>
 							</li>
 						</ul>
 					</nav>
+					<button class="ba-menu-toggle" aria-label="Open menu" title="Open menu">
+						<span></span>
+					</button>
 				</header>
 				<div class="ba-research__content">
 					<h1>Today's research,
@@ -292,6 +295,11 @@
 			</div>
 		</footer>
 	</main>
+	<script>
+		let menuBtn = document.querySelector('.ba-menu-toggle');
+		let menu = document.querySelector('.ba-nav');
+		menuBtn.addEventListener('click', () => menu.classList.toggle('open'));
+	</script>
 </body>
 
 </html>
