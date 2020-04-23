@@ -764,6 +764,7 @@ select {
   margin-bottom: 40px;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
 @media screen and (min-width: 640px) {
   .ba-header {
@@ -773,6 +774,7 @@ select {
 }
 @media screen and (min-width: 1024px) {
   .ba-header {
+    align-items: center;
     margin-bottom: 190px;
   }
 }
@@ -824,7 +826,7 @@ select {
   }
   .ba-nav__items li {
     display: block;
-    width: 280px;
+    width: 200px;
     text-align: center;
     padding: 5px 0;
   }
