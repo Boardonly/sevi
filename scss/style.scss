@@ -127,6 +127,7 @@ textarea {
 }
 
 .ba-research {
+  position: relative;
   background: url(../img/background_1.png) no-repeat top right,
     url(../img/3rows_dotted.png) no-repeat left center;
   background-size: 35vmin;
@@ -240,6 +241,8 @@ textarea {
 .ba-header {
   align-items: center;
   margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
 
   @media screen and (min-width: 640px) {
     align-items: center;
@@ -247,22 +250,76 @@ textarea {
   }
 
   @media screen and (min-width: 1024px) {
-    display: flex;
-    justify-content: space-between;
+    //  display: flex;
+    //  justify-content: space-between;
     margin-bottom: 190px;
   }
 
   @media screen and (min-width: 1200px) {
-    display: flex;
-    justify-content: space-between;
+    //  display: flex;
+    //  justify-content: space-between;
     margin-bottom: 217px;
   }
 }
-
 .ba-nav {
-  display: none;
+  @media screen and (max-width: 1023px) {
+    opacity: 0;
+    transform: translateX(-110%);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 30;
+	 transition: transform 0.3s, opacity 0.3s;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2);
+
+    &__items {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      height: 100vmin;
+      padding: 20px;
+      margin: 0;
+      list-style-type: none;
+      background: #fedb59;
+
+      li:first-child {
+        font-weight: 700;
+      }
+
+      li:last-child {
+        background: #723182;
+        padding: 5px 0;
+        border: 1px solid #723182;
+        border-radius: 30px;
+        color: #f3edf4;
+      }
+      li:last-child > a {
+        color: #f3edf4;
+      }
+      li:hover > a {
+        color: #44224b;
+      }
+      li:last-child:hover {
+        background: transparent;
+      }
+
+      li {
+        display: block;
+        width: 280px;
+        text-align: center;
+        padding: 5px 0;
+        // border:
+      }
+
+      li + li {
+        border-top: 1px solid #723182;
+      }
+    }
+  }
 
   @media screen and (min-width: 1024px) {
+    display: flex;
+
     &__items > li:last-child {
       background: #723182;
       padding: 5px 55px;
@@ -325,7 +382,7 @@ textarea {
     display: block;
     width: 100%;
     height: 4px;
-    background: rgb(129, 9, 9);
+    background: #723182;
     transition: transform 0.3s, opacity 0.3s;
   }
   @media screen and (min-width: 1024px) {
@@ -333,19 +390,18 @@ textarea {
   }
 }
 .ba-nav.open {
-	/* display: block; */
-	opacity: 1;
-	transform: translateX(0%);
- }
- .ba-nav.open ~ .ba-menu-toggle::before {
-	transform: translateY(10px) rotate(45deg);
- }
- .ba-nav.open ~ .ba-menu-toggle::after {
-	transform: translateY(-10px) rotate(-45deg);
- }
- .ba-nav.open ~ .ba-menu-toggle span {
-	opacity: 0;
- }
+  opacity: 1;
+  transform: translateX(0%);
+}
+.ba-nav.open ~ .ba-menu-toggle::before {
+  transform: translateY(10px) rotate(45deg);
+}
+.ba-nav.open ~ .ba-menu-toggle::after {
+  transform: translateY(-10px) rotate(-45deg);
+}
+.ba-nav.open ~ .ba-menu-toggle span {
+  opacity: 0;
+}
 
 .ba-items--button {
   color: #f3edf4;
