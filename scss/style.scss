@@ -549,7 +549,7 @@ textarea {
   &__title {
     text-align: center;
     @media screen and (min-width: 1024px) {
-      margin-bottom: 110px;
+      margin-bottom: 107px;
     }
   }
   &__list {
@@ -689,13 +689,13 @@ textarea {
   &__store {
     padding-left: 10px;
   }
-  &__link + &__link {
-    margin-left: 26px;
-  }
   @media screen and (min-width: 640px) {
     .ba-mobile__mainwrap {
       order: -1;
       width: 50%;
+    }
+    &__link + &__link {
+      margin-left: 26px;
     }
   }
   @media screen and (min-width: 1024px) {
@@ -739,7 +739,6 @@ textarea {
     padding: 50px 0px 0px;
     max-width: 1240px;
     :first-child {
-      margin-top: 5px;
       img {
         width: 124px;
       }
@@ -747,7 +746,7 @@ textarea {
     @media screen and (min-width: 768px) {
       flex-direction: row;
       flex-wrap: wrap;
-      :first-child {
+      & > :first-child {
         width: 100%;
       }
     }
@@ -773,12 +772,16 @@ textarea {
   @media screen and (min-width: 1024px) {
     &-row {
       flex-wrap: nowrap;
-      :first-child {
+      & > :first-child {
         width: 20%;
       }
     }
     &-col {
       width: 20%;
+
+      > h4 {
+        margin-bottom: 30px;
+      }
     }
   }
   &-item {
@@ -794,11 +797,11 @@ textarea {
   &__bottom {
     display: flex;
     justify-content: center;
+    align-items: center;
     border-top: 2px solid #d9d9d9;
-    padding-top: 42px;
+    padding-top: 50px;
     a {
       margin-left: 15px;
-      margin-top: 10px;
     }
     p {
       line-height: 1;
