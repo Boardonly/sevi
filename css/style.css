@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@600&family=Nunito+Sans:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap");
 /* font-family: 'Nunito Sans', sans-serif;
 font-family: 'Catamaran', sans-serif;
@@ -543,19 +544,23 @@ th {
   }
 
   body {
-    font-size: 20px;
-    line-height: 2.05;
+    font-size: 22px;
+    line-height: 1.91;
   }
 }
 h1,
-h2,
+h2 {
+  font: 700 26px/1.2 "Playfair Display", serif;
+  letter-spacing: 0.02em;
+  color: #44224b;
+  margin: 0 0 42px;
+}
+
 h3,
 h4,
 h5,
 h6 {
-  font: 700 26px/1.2 "Playfair Display", serif;
-  letter-spacing: 0.04em;
-  color: #44224b;
+  font: 700 26px/1.2 "Nunito Sans", sans-serif;
   margin: 0 0 42px;
 }
 
@@ -592,6 +597,11 @@ h1 {
     font-size: 52px;
   }
 }
+p {
+  margin-top: 0;
+  letter-spacing: -0.03em;
+}
+
 a {
   text-decoration: none;
   color: #44224bad;
@@ -616,6 +626,14 @@ a {
   .ba-container {
     padding: 70px 20px 70px;
     max-width: 1645px;
+  }
+
+  .ba-container--small {
+    max-width: 1220px;
+  }
+
+  .ba-container--max {
+    max-width: 1840px;
   }
 }
 /* Typography */
@@ -854,14 +872,14 @@ select {
     margin: 0;
     align-items: center;
   }
-  .ba-nav__items > :first-child {
+  .ba-nav__items > :active {
     font-weight: 700;
   }
   .ba-nav__items li {
     display: inline-block;
   }
   .ba-nav__items li + li {
-    margin-left: 70px;
+    margin-left: 58px;
   }
   .ba-nav__items li:hover > a {
     color: #44224b;
@@ -954,10 +972,21 @@ select {
   justify-content: space-between;
 }
 .ba-resources__subtitle {
-  /* font: 800 32px/1.9 "Nunito Sans", sans-serif; */
+  font: 800 32px/1.9 "Nunito Sans", sans-serif;
   font-weight: 800;
   font-size: 20px;
   color: #091e40;
+}
+@media screen and (min-width: 640px) {
+  .ba-resources__subtitle {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .ba-resources__subtitle {
+    margin: 0 0 36px;
+    font-size: 28px;
+  }
 }
 .ba-resources__item {
   width: 100%;
@@ -978,13 +1007,13 @@ select {
   .ba-resources__item {
     width: 25%;
     margin: 0 0 50px;
-    font-size: 18px;
+    font-size: 21px;
   }
 }
 .ba-resources__img {
   display: inline-flex;
   position: relative;
-  padding: 25px;
+  padding: 25px 0 25px 25px;
   margin-bottom: 5px;
 }
 .ba-resources__img > svg {
@@ -1044,6 +1073,106 @@ select {
 @media screen and (min-width: 1600px) {
   .ba-libraries {
     background-size: 39vmax;
+  }
+}
+
+.ba-bestsellers__title {
+  text-align: center;
+}
+@media screen and (min-width: 1024px) {
+  .ba-bestsellers__title {
+    margin-bottom: 110px;
+  }
+}
+.ba-bestsellers__list {
+  counter-reset: section;
+  padding: 0;
+  list-style-type: none;
+}
+.ba-bestsellers__item {
+  font-size: 22px;
+  padding: 20px 0;
+}
+.ba-bestsellers__subtitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.ba-bestsellers__subtitle h3 {
+  font: 800 30px/1.6 "Nunito Sans", sans-serif;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: #091e40;
+}
+.ba-bestsellers__subtitle .ba-bestsellers__price {
+  font-size: 32px;
+}
+@media screen and (min-width: 1024px) {
+  .ba-bestsellers__subtitle {
+    padding-right: 15px;
+  }
+  .ba-bestsellers__subtitle h3 {
+    font-size: 34px;
+  }
+  .ba-bestsellers__subtitle .ba-bestsellers__price {
+    font-size: 40px;
+  }
+}
+.ba-bestsellers__starwrapper {
+  display: flex;
+  padding-top: 5px;
+}
+.ba-bestsellers__price {
+  font-weight: 800;
+  font-size: 40px;
+}
+.ba-bestsellers__subcontent {
+  font-size: 30px;
+  padding: 0 37px;
+}
+.ba-bestsellers__description h3 {
+  color: #091e40;
+  position: relative;
+}
+.ba-bestsellers__description h3::after {
+  content: " • Copies Sold: 150 million";
+}
+.ba-bestsellers__item.open {
+  box-shadow: 0px 40px 70px 0px rgba(197, 197, 197, 0.3);
+  padding: 76px 15px 0px;
+  margin-bottom: 53px;
+}
+@media screen and (min-width: 1024px) {
+  .ba-bestsellers__item.open .ba-bestsellers__subtitle {
+    font-size: 50px;
+  }
+  .ba-bestsellers__item.open .ba-bestsellers__content {
+    padding: 50px 20px;
+    display: flex;
+  }
+  .ba-bestsellers__item.open .ba-bestsellers__img {
+    width: 230px;
+    margin-left: 22px;
+  }
+  .ba-bestsellers__item.open .ba-bestsellers__description {
+    margin-left: 50px;
+    padding: 27px 0;
+    max-width: 790px;
+  }
+  .ba-bestsellers__item.open .ba-bestsellers__description h3 {
+    text-align: left;
+    font-size: 30px;
+    padding: 0 5px;
+    margin-bottom: 30px;
+  }
+  .ba-bestsellers__item.open .ba-bestsellers__description p {
+    font-size: 28px;
+    letter-spacing: -0.046em;
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+  .ba-bestsellers__item.open .ba-bestsellers__description img {
+    margin-top: 35px;
   }
 }
 
@@ -1120,26 +1249,59 @@ select {
 .ba-footer-row {
   display: flex;
   margin: 0 auto;
+  flex-direction: column;
   padding: 50px 0px 0px;
   max-width: 1240px;
 }
 .ba-footer-row :first-child {
   margin-top: 5px;
 }
+.ba-footer-row :first-child img {
+  width: 124px;
+}
+@media screen and (min-width: 768px) {
+  .ba-footer-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .ba-footer-row :first-child {
+    width: 100%;
+  }
+}
 .ba-footer-col {
   width: 230px;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+  padding-left: 35px;
 }
-.ba-footer-col + .ba-footer-col {
-  margin-left: 35px;
+.ba-footer-col > h4 {
+  font-weight: 700;
+  font-size: 21px;
+  margin-bottom: 17px;
+  color: #44224b;
+}
+@media screen and (min-width: 640px) {
+  .ba-footer-col {
+    width: calc(50% - 35px);
+    text-align: left;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .ba-footer-row {
+    flex-wrap: nowrap;
+  }
+  .ba-footer-row :first-child {
+    width: 20%;
+  }
+  .ba-footer-col {
+    width: 20%;
+  }
 }
 .ba-footer-item {
   display: block;
   margin: 0;
-}
-.ba-footer-item :first-child {
-  font-weight: 700;
-  font-size: 21px;
-  margin-bottom: 17px;
+  padding: 0;
 }
 .ba-footer-item li {
   list-style: none;
@@ -1160,3 +1322,4 @@ select {
   font-size: 18px;
   margin-right: 40px;
 }
+/*# sourceMappingURL=style.css.map */
