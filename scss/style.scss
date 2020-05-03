@@ -545,7 +545,8 @@ textarea {
 
 .ba-bestsellers {
   &__inner {
-  }
+	  text-align: center;
+}
   &__title {
     text-align: center;
     @media screen and (min-width: 1024px) {
@@ -558,13 +559,14 @@ textarea {
     list-style-type: none;
   }
   &__item {
+	  text-align: left;
     font-size: 22px;
     padding: 20px 0;
   }
   &__subtitle {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+	 align-items: baseline;
 
     h3 {
       font: 800 30px/1.6 "Nunito Sans", sans-serif;
@@ -603,7 +605,9 @@ textarea {
     padding: 0 37px;
   }
   &__content {
+
   }
+ 
   &__description {
     h3 {
       color: #091e40;

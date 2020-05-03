@@ -810,6 +810,9 @@ select {
     .ba-libraries {
       background-size: 39vmax; } }
 
+.ba-bestsellers__inner {
+  text-align: center; }
+
 .ba-bestsellers__title {
   text-align: center; }
   @media screen and (min-width: 1024px) {
@@ -822,6 +825,7 @@ select {
   list-style-type: none; }
 
 .ba-bestsellers__item {
+  text-align: left;
   font-size: 22px;
   padding: 20px 0; }
 
