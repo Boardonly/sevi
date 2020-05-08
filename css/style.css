@@ -605,9 +605,10 @@ select {
   .ba-nav {
     opacity: 0;
     transform: translateX(-110%);
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
+    height: 100%;
     z-index: 30;
     transition: transform 0.3s, opacity 0.3s;
     box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2); }
@@ -615,7 +616,7 @@ select {
       display: flex;
       flex-direction: column;
       justify-content: start;
-      height: 100vmin;
+      height: 100%;
       padding: 20px;
       margin: 0;
       list-style-type: none;
@@ -831,7 +832,6 @@ select {
 
 .ba-bestsellers__subtitle {
   display: flex;
-  justify-content: space-between;
   align-items: baseline; }
   .ba-bestsellers__subtitle h3 {
     font: 800 30px/1.6 "Nunito Sans", sans-serif;
@@ -850,7 +850,10 @@ select {
 
 .ba-bestsellers__starwrapper {
   display: flex;
-  padding-top: 5px; }
+  flex-grow: 1;
+  padding: 0px 77px; }
+  .ba-bestsellers__starwrapper svg {
+    margin-left: 15px; }
 
 .ba-bestsellers__price {
   font-weight: 800;
@@ -870,9 +873,30 @@ select {
   box-shadow: 0px 40px 70px 0px rgba(197, 197, 197, 0.3);
   padding: 76px 15px 0px;
   margin-bottom: 53px; }
+  @media screen and (min-width: 640px) {
+    .ba-bestsellers__item.open .ba-bestsellers__subtitle {
+      font-size: 30px; }
+      .ba-bestsellers__item.open .ba-bestsellers__subtitle h3 {
+        font-size: 35px;
+        letter-spacing: -0.035em; }
+    .ba-bestsellers__item.open .ba-bestsellers__starwrapper {
+      padding: 0 55px;
+      margin-top: 5px; }
+      .ba-bestsellers__item.open .ba-bestsellers__starwrapper svg {
+        width: 40px;
+        height: 40px; } }
   @media screen and (min-width: 1024px) {
     .ba-bestsellers__item.open .ba-bestsellers__subtitle {
       font-size: 50px; }
+      .ba-bestsellers__item.open .ba-bestsellers__subtitle h3 {
+        font-size: 45px;
+        letter-spacing: -0.035em; }
+    .ba-bestsellers__item.open .ba-bestsellers__starwrapper {
+      padding: 0 55px;
+      margin-top: 5px; }
+      .ba-bestsellers__item.open .ba-bestsellers__starwrapper svg {
+        width: 50px;
+        height: 50px; }
     .ba-bestsellers__item.open .ba-bestsellers__content {
       padding: 50px 20px;
       display: flex; }
@@ -994,6 +1018,8 @@ select {
   .ba-footer-item li {
     list-style: none;
     font-size: 18px; }
+    .ba-footer-item li:hover a {
+      color: #723182; }
 
 .ba-footer__bottom {
   display: flex;
@@ -1003,6 +1029,8 @@ select {
   padding-top: 50px; }
   .ba-footer__bottom a {
     margin-left: 15px; }
+    .ba-footer__bottom a:hover svg > path {
+      fill: #64037c; }
   .ba-footer__bottom p {
     line-height: 1;
     font-size: 18px;

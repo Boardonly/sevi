@@ -274,9 +274,10 @@ textarea {
   @media screen and (max-width: 1023px) {
     opacity: 0;
     transform: translateX(-110%);
-    position: absolute;
+    position: fixed;
     left: 0;
-    top: 0;
+	 top: 0;
+	 height: 100%;
     z-index: 30;
     transition: transform 0.3s, opacity 0.3s;
     box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2);
@@ -285,7 +286,7 @@ textarea {
       display: flex;
       flex-direction: column;
       justify-content: start;
-      height: 100vmin;
+      height: 100%;
       padding: 20px;
       margin: 0;
       list-style-type: none;
@@ -545,8 +546,8 @@ textarea {
 
 .ba-bestsellers {
   &__inner {
-	  text-align: center;
-}
+    text-align: center;
+  }
   &__title {
     text-align: center;
     @media screen and (min-width: 1024px) {
@@ -559,14 +560,13 @@ textarea {
     list-style-type: none;
   }
   &__item {
-	  text-align: left;
+    text-align: left;
     font-size: 22px;
     padding: 20px 0;
   }
   &__subtitle {
     display: flex;
-    justify-content: space-between;
-	 align-items: baseline;
+    align-items: baseline;
 
     h3 {
       font: 800 30px/1.6 "Nunito Sans", sans-serif;
@@ -594,7 +594,12 @@ textarea {
   }
   &__starwrapper {
     display: flex;
-    padding-top: 5px;
+    flex-grow: 1;
+    padding: 0px 77px;
+
+    svg {
+      margin-left: 15px;
+    }
   }
   &__price {
     font-weight: 800;
@@ -605,9 +610,8 @@ textarea {
     padding: 0 37px;
   }
   &__content {
-
   }
- 
+
   &__description {
     h3 {
       color: #091e40;
@@ -622,11 +626,42 @@ textarea {
     padding: 76px 15px 0px;
     margin-bottom: 53px;
     @media screen and (min-width: 640px) {
+		.ba-bestsellers__subtitle {
+			font-size: 30px;
+			 h3{
+				 font-size: 35px;
+				 letter-spacing: -0.035em;
+			 }
+ 
+		 }
+		 .ba-bestsellers__starwrapper{
+			 padding: 0 55px;
+			 margin-top: 5px;
+			 svg{
+				 width: 40px;
+				 height: 40px;
+ 
+			 }
+		 }
     }
     @media screen and (min-width: 1024px) {
       .ba-bestsellers__subtitle {
-        font-size: 50px;
-      }
+		  font-size: 50px;
+		   h3{
+				font-size: 45px;
+				letter-spacing: -0.035em;
+			}
+
+		}
+		.ba-bestsellers__starwrapper{
+			padding: 0 55px;
+			margin-top: 5px;
+			svg{
+				width: 50px;
+				height: 50px;
+
+			}
+		}
       .ba-bestsellers__content {
         padding: 50px 20px;
         display: flex;
@@ -796,6 +831,11 @@ textarea {
     li {
       list-style: none;
       font-size: 18px;
+      &:hover {
+        a {
+          color: #723182;
+        }
+      }
     }
   }
   &__bottom {
@@ -806,7 +846,13 @@ textarea {
     padding-top: 50px;
     a {
       margin-left: 15px;
+      &:hover {
+        svg > path {
+          fill: #64037c;
+        }
+      }
     }
+
     p {
       line-height: 1;
       font-size: 18px;
